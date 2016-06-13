@@ -1,8 +1,11 @@
 <div class="menu">
 	{{#link-to 'index'}}index{{/link-to}} |
 	{{#link-to 'about'}}about{{/link-to}}
-	{{#if false}}
-    	<a {{action 'invalidateSession'}}>Logout</a>
+	{{#if session.isAuthenticated}}
+    	<a {{action 'logout'}}>Logout</a>
+    {{else}}
+		{{#link-to 'login'}}Login{{/link-to}}
+
  	{{/if}}
 </div>
 
